@@ -1,4 +1,17 @@
 import Head from "next/head";
+import { createClient } from "next-sanity";
+
+const client = createClient({
+  projectId: "tf7pn90e",
+  dataset: "production",
+});
+
+export async function getStaticProps() {
+  return {
+    // these props will be passed to the page
+    props: {},
+  };
+}
 
 export default function Home() {
   return (
