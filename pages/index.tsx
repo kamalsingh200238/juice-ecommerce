@@ -1,17 +1,17 @@
-import Head from "next/head";
-import { createClient } from "next-sanity";
-import Image from "next/image";
-import imageUrlBuilder from '@sanity/image-url'
+import Head from 'next/head';
+import { createClient } from 'next-sanity';
+import Image from 'next/image';
+import imageUrlBuilder from '@sanity/image-url';
 
 const client = createClient({
-  projectId: "tf7pn90e",
-  dataset: "production",
+  projectId: 'tf7pn90e',
+  dataset: 'production',
 });
 
-const builder = imageUrlBuilder(client)
+const builder = imageUrlBuilder(client);
 
 function urlFor(source) {
-  return builder.image(source)
+  return builder.image(source);
 }
 
 export async function getStaticProps() {
@@ -43,7 +43,12 @@ export default function Home({ data }) {
               {item.images.map((image) => {
                 return (
                   <div key={image._key} className="relative aspect-square w-96">
-                    <Image src={urlFor(image).width(384).height(384).url()} alt={image.caption} fill={true} className="object-contain" />
+                    <Image
+                      src={urlFor(image).width(384).height(384).url()}
+                      alt={image.caption}
+                      fill={true}
+                      className="object-contain"
+                    />
                   </div>
                 );
               })}

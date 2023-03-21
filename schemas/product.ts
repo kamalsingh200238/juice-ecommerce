@@ -1,38 +1,38 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: "product",
-  title: "Products",
-  type: "document",
+  name: 'product',
+  title: 'Products',
+  type: 'document',
   fields: [
     defineField({
-      name: "name",
-      title: "Name",
-      type: "string",
+      name: 'name',
+      title: 'Name',
+      type: 'string',
     }),
     defineField({
-      name: "slug",
-      title: "Slug",
-      type: "slug",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        source: "name",
+        source: 'name',
       },
     }),
     defineField({
-      name: "images",
-      title: "Images",
-      type: "array",
+      name: 'images',
+      title: 'Images',
+      type: 'array',
       of: [
         {
-          type: "image",
+          type: 'image',
           options: {
             hotspot: true,
           },
           fields: [
             defineField({
-              name: "caption",
-              title: "Caption",
-              type: "string",
+              name: 'caption',
+              title: 'Caption',
+              type: 'string',
             }),
           ],
         },
