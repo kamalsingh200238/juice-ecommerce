@@ -27,10 +27,20 @@ export type Product = {
 export type CartItem = {
   product: Product;
   quantity: number;
-}
+};
 
 export type CartState = {
   cart: CartItem[];
   increaseQuantity: (product: Product) => void;
   decreaseQuantity: (product: Product) => void;
-}
+};
+
+export type ComputedCartState = {
+  totalCartPrice: number;
+  totalCartQuantity: number;
+};
+
+export type CartStateSetType = (
+  partial: CartState | Partial<CartState> | ((state: CartState) => CartState | Partial<CartState>),
+  replace?: boolean | undefined,
+) => void;
